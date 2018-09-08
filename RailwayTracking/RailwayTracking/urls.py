@@ -18,11 +18,16 @@ from django.urls import include , path
 from Loginapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.urlpatterns import format_suffix_patterns
+from companies import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('stocks/', views.stocklist.as_view()),
     path('login/',include('Loginapp.urls')),
     path('music/',include('music.urls')),
+    
 ]
+urlpatterns=format_suffix_patterns(urlpatterns)
 
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

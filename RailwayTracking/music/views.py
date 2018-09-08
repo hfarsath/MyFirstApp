@@ -68,13 +68,13 @@ class AlbumDelete(DeleteView):
 class UserFormView(View):
     form_class=UserForm
     template_name='music/registration_form.html'
-
+#empty blank form
     def get(self,request):
         form=self.form_class(None)
         return render(request,self.template_name,{'form':form})
-    
+#post data into database    
     def post(self,request):
-        form=  self.form_class(request.POST)
+        form= self.form_class(request.POST)
 
         if form.is_valid():
             user=form.save(commit=False)
