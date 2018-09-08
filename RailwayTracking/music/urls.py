@@ -5,9 +5,12 @@ from django.conf.urls.static import static
 app_name='music'
 urlpatterns = [
     
-    path('',views.index,name='index'),
-    path('<album_id>/',views.detail,name='detail'),
-     path('<album_id>/favorite/',views.favorite,name='favorite'),
+    path('',views.IndexView.as_view(),name='index'),
+    path('register/',views.UserFormView.as_view(),name='register'),
+    path('<pk>/',views.DetailView.as_view(),name='detail'),
+    path('album/add/',views.AlbumCreate.as_view(),name='album-add'),
+    path('album/<pk>/',views.AlbumUpdate.as_view(),name='album-update'),
+    path('album/<pk>/delete/',views.AlbumDelete.as_view(),name='album-delete'),
 
 
 ]
