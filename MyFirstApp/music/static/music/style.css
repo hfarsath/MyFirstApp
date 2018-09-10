@@ -1,5 +1,6 @@
 body{
-    background: white url("images/back.jpg");
+    background: white url("images/back.jpg")
+    ;
 }
 
 .navbar {
@@ -7,3 +8,21 @@ body{
 }
 .navbar-brand{
     font-family: "satisfy",cursive;}
+
+
+.table-align{position:absolute;
+			left:335px;
+			top:200px;}
+.table{width:1000px;}
+
+#song {list-style-type:none;
+	position:absolute;
+	top:100px;
+	left:300px;}
+
+li{display:inline;
+   margin-left:10px;}
+ #view-btn{background:blue;
+ 			  color:white;
+ 			  border-radius:5px;
+ 			  padding:10px;}

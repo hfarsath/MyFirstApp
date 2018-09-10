@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'RailwayTracking.urls'
+ROOT_URLCONF = 'MyFirstApp.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'RailwayTracking.wsgi.application'
+WSGI_APPLICATION = 'MyFirstApp.wsgi.application'
 
 
 # Database

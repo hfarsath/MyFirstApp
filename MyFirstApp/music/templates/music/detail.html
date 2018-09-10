@@ -10,7 +10,7 @@
                     <a href="{$ url 'music:detail' album.id %}">
                         <img src="{{album.Album_logo.url}}" class="img-responsive">
                     </a>
-                    <h1>{{album.Album_title}}
+                    <h1 style="font-size:30px;"> {{album.Album_title}}<br/>
                         <small>{{album.Composer}}</small>
                     </h1>
                     <h2>{{album.Lyricist}}</h2>
@@ -20,12 +20,11 @@
     </div>
     <div class="container-fluid songs-container">
         <div class="row">
-            <div class="col-sm-8 col-md-12">
-                <ul class="nan nav-pills" style="margin-bottom: 10px;">
-                <li class="active"><a href="{%url 'music:detail' album.id %}">view All</a></li>
-                <li><a href="#">Add New SOng</a></li>
-                </ul>
-                <div class="panel panel-default">
+            <ul id="song">
+                <li><a href="" id="view-btn">View All</a></li>
+                <li><a>New Songs</a></li>
+            </ul>
+                <div class="panel panel-default table-align">
                     <div class="panel-body">
                         <h3>All Songs</h3>
                         <table class="table">
@@ -38,9 +37,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for song in album.song_set.all%}
                                 <tr>
+                                    <th>{{song.song_title}}</th>
+                                    <th>mp3</th>
+                                    <th>{{song.is_favorite}}</th>
+                                    <th></th>
 
                                 </tr>
+                                {%endfor%}
                             </tbody>
                         </table>
                     </div>
